@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Everett";
+    src: url("/fonts/Everett-Regular.otf") format("opentype");
+}
+@font-face {
+    font-family: "EverettLight";
+    src: url("/fonts/Everett-Light.otf") format("opentype");
+}
+@font-face {
+    font-family: "EverettMedium";
+    src: url("/fonts/Everett-Medium.otf") format("opentype");
+}
+@font-face {
+    font-family: "wu";
+    src: url("/fonts/wu-ebitalic.ttf") format("truetype");
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes fade-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-scale-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fade-scale-out {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+.line-break {
+    position: relative;
+    border: none;
+    height: 1px;
+    background-color: #898990;
+    z-index: 1;
+    opacity: 30%;
+    margin: 28px -10px;
+}

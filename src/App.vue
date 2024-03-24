@@ -1,30 +1,49 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <NotificationGroup group="error">
+    <div
+      class="fixed inset-0 flex items-start justify-end p-6 px-4 py-6 pointer-events-none"
+    >
+      <div class="w-full max-w-sm">
+        <Notification
+          v-slot="{ notifications }"
+          enter="transform ease-out duration-300 transition"
+          enter-from="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-4"
+          enter-to="translate-y-0 opacity-100 sm:translate-x-0"
+          leave="transition ease-in duration-500"
+          leave-from="opacity-100"
+          leave-to="opacity-0"
+          move="transition duration-500"
+          move-delay="delay-300"
+        >
+          <div
+            class="flex w-full max-w-sm mx-auto mt-4 overflow-hidden rounded-lg shadow-md bg-secondary"
+            v-for="notification in notifications"
+            :key="notification.id"
+          >
+          <div class="flex items-center justify-center w-12 bg-red-500">
+            <svg class="w-6 h-6 fill-current text-primary" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 3.36667C10.8167 3.36667 3.3667 10.8167 3.3667 20C3.3667 29.1833 10.8167 36.6333 20 36.6333C29.1834 36.6333 36.6334 29.1833 36.6334 20C36.6334 10.8167 29.1834 3.36667 20 3.36667ZM19.1334 33.3333V22.9H13.3334L21.6667 6.66667V17.1H27.25L19.1334 33.3333Z"/>
+            </svg>
+          </div>
+
+          <div class="px-4 py-2 -mx-3">
+            <div class="mx-3">
+              <span class="font-semibold text-accent">{{ notification.title }}</span>
+              <p class="text-sm text-primary">{{ notification.text }}</p>
+            </div>
+          </div>
+          </div>
+        </Notification>
+      </div>
+    </div>
+  </NotificationGroup>
+  <div class="flex flex-col h-screen max-h-screen gap-5 antialiased hide-print text-primary">
+    <Header />
+    <Home />
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<script setup>
+import Home from './components/app/Home.vue';
+import Header from './components/Header.vue';
+</script>

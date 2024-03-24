@@ -1,7 +1,39 @@
-# Vue 3 + Vite
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# CARSCAN
 
-## Recommended IDE Setup
+CarScan is a web-based application that allows users to upload an image containing traffic scenes and performs vehicle detection to determine the number of vehicles present in the image.
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+## Features
+
+- Upload images containing traffic scenes and process them to detect vehicles.
+
+## Usage
+
+- Clone the repository and cd into app directory
+```
+git clone https://github.com/Anirudh-R-2506/CarScan.git && cd CarScan
+```
+
+- Install requirements
+```
+npm install
+pip install -r server/requirements.txt
+```
+
+- Download the .weights file for the model from the below URL and put it in the server/dnn_model directory
+```
+https://drive.google.com/file/d/1xEJ0L_6fUxRzjUolbhPGls7fkoEGVQ_X/view?usp=sharing
+```
+
+- Run the following commands in seperate terminal windows
+```
+python3 server/app.py
+```
+```
+npm run dev
+```
+- Visit the URL from the `npm run dev` command to use the application
+
+## Demo
+
+[![CarScan Demo](example/thumbnail.png)](example/recording.mov)
